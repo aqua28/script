@@ -4,17 +4,6 @@ sudo pacman -Syu --noconfirm
 
 #sudo pacman -S --noconfirm reflector rsync
 
-if grep -q "Artix Linux" /etc/os-release; then
-    # Commands to run if the system is Arch Linux
-    echo "This is Artix Linux."
-    git clone https://github.com/smileofthesun/artixrepo ~/artixrepo
-    cd ~/artixrepo
-    sudo ./artix-archlinux-support
-else
-    # Commands to run if the system is not Arch Linux
-    echo "This is not Artix Linux."
-fi
-
 echo "!!!!! SKIP ON ARTIX !!!!!
 Enter your desired country for the mirrorlist (leave empty to skip):"
 read country
@@ -38,14 +27,14 @@ git clone https://github.com/aqua28//slock.git ~/documents/git/slock
 git clone https://github.com/aqua28/slstatus.git  ~/documents/git/slstatus
 git clone https://github.com/aqua28/nsxiv.git ~/documents/git/nsxiv
 
-sudo make -C ~/.local/src/dwm install
-sudo make -C ~/.local/src/st install
-sudo make -C ~/.local/src/dmenu install
-sudo make -C ~/.local/src/slock install
-sudo make -C ~/.local/src/slstatus install
-sudo make -C ~/.local/src/nsxiv install
+sudo make -C ~/documents/git/dwm install
+sudo make -C ~/documents/git/st install
+sudo make -C ~/documents/git/dmenu install
+sudo make -C ~/documents/git/slock install
+sudo make -C ~/documents/git/slstatus install
+sudo make -C ~/documents/git/nsxiv install
 
-git clone https://github.com/smileofthesun/dotfiles.git ~/dotfiles
+git clone https://github.com/aqua28/dotfiles.git ~/dotfiles
 rsync -av --exclude='.git' ~/dotfiles/ ~/
 rm -rf ~/dotfiles
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.config/shell/fast-syntax-highlighting
@@ -70,12 +59,6 @@ Section "Device"
 EndSection
 EOM'
 
-sudo bash -c 'cat >> /etc/pam.d/login <<- EOM
-
-# Gnome Keyring
-session    optional     pam_gnome_keyring.so auto_start
-auth       optional     pam_gnome_keyring.so
-EOM'
 
 sudo bash -c 'cat >> /etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh <<- EOM
 #!/bin/sh
@@ -93,16 +76,12 @@ elif [ "$(nmcli -g GENERAL.STATE device show eth0)" = "20 (unavailable)" ]; then
 fi
 EOM'
 
-sudo chmod +x /etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh
-
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
 makepkg -fsri
 
 awk '!/#/ { print }' ~/archinstall/aurlist | yay -S --noconfirm --needed -
 
-
-rm -rf ~/yay ~/artixrepo
 
 if grep -q "Artix Linux" /etc/os-release; then
     # Commands to run if the system is Arch Linux
