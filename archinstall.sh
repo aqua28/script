@@ -108,4 +108,3 @@ else
     (crontab -l 2>/dev/null; echo "0 14 * * * /.local/bin/daily_update") | crontab -    
 fi
 
-setbg ~/wg.jpg
