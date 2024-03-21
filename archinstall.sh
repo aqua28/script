@@ -92,4 +92,5 @@ if grep -q "Artix Linux" /etc/os-release; then
 else
     # Commands to run if the system is not Arch Linux
     echo "This is not Artix Linux."
+    (crontab -l 2>/dev/null; echo "0 14 * * * /.local/bin/daily_update") | crontab -    
 fi
