@@ -11,6 +11,8 @@ libexif		#	library for exif
 xclip		#	copy with terminal
 dunst		#	notification system
 cronie
+xdotool
+python-pywal
 libnotify
 sxhkd		#	X daemon
 sshfs		#	server nas
