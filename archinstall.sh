@@ -25,15 +25,23 @@ mkdir ~/documents/keepassxc
 git clone https://github.com/aqua28/dwm.git ~/documents/git/dwm
 git clone https://github.com/aqua28/st.git ~/documents/git/st
 git clone https://github.com/aqua28/dmenu.git ~/documents/git/dmenu
-git clone https://git.suckless.org/slock ~/documents/git/slock
-#git clone https://github.com/aqua28/slstatus.git  ~/documents/git/slstatus
+git clone https://github.com/aqua28/slock ~/documents/git/slock
 git clone https://github.com/aqua28/nsxiv.git ~/documents/git/nsxiv
+
+echo "Enter the username you want to add:"
+read userslock
+
+echo "Enter the group name you want to add:"
+read groupslock
+
+sed -i "s/{{USERNAME}}/$userslock/g" ~/documents/git/slock/config.def.h
+sed -i "s/{{GROUPNAME}}/$groupslock/g" ~/documents/git/slock/config.def.h
+
 
 sudo make -C ~/documents/git/dwm install
 sudo make -C ~/documents/git/st install
 sudo make -C ~/documents/git/dmenu install
 sudo make -C ~/documents/git/slock install
-#sudo make -C ~/documents/git/slstatus install
 sudo make -C ~/documents/git/nsxiv install
 
 git clone https://github.com/aqua28/dotfiles.git ~/dotfiles
