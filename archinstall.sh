@@ -23,7 +23,7 @@ mkdir -p ~/documents/git
 git clone https://github.com/aqua28/dwm.git ~/documents/git/dwm
 git clone https://github.com/aqua28/st.git ~/documents/git/st
 git clone https://github.com/aqua28/dmenu.git ~/documents/git/dmenu
-git clone https://github.com/aqua28//slock.git ~/documents/git/slock
+git clone https://git.suckless.org/slock ~/documents/git/slock
 git clone https://github.com/aqua28/slstatus.git  ~/documents/git/slstatus
 git clone https://github.com/aqua28/nsxiv.git ~/documents/git/nsxiv
 
