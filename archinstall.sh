@@ -75,6 +75,8 @@ elif [ "$(nmcli -g GENERAL.STATE device show eth0)" = "20 (unavailable)" ]; then
     nmcli radio wifi on
 fi
 EOM'
+mkdir ~/.config/shell
+touch ~/.config/shell/histfile
 
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
