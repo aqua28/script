@@ -14,9 +14,9 @@ else
     echo "Skipping mirrorlist configuration..."
 fi
 
-cd ~/archinstall
+cd ~/script
 
-awk '!/^#/ {print $1}' ~/archinstall/packagelist | sudo pacman -S --noconfirm --needed -
+awk '!/^#/ {print $1}' ~/script/packagelist | sudo pacman -S --noconfirm --needed -
 
 mkdir -p ~/documents/git 
 
@@ -82,7 +82,7 @@ git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
 makepkg -fsri
 
-awk '!/#/ { print }' ~/archinstall/aurlist | yay -S --noconfirm --needed -
+awk '!/#/ { print }' ~/script/aurlist | yay -S --noconfirm --needed -
 
 
 if grep -q "Artix Linux" /etc/os-release; then
