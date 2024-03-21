@@ -3,13 +3,13 @@
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S --noconfirm reflector rsync
-
+clear
 echo "!!!!! SKIP ON ARTIX !!!!!
 Enter your desired country for the mirrorlist (leave empty to skip):"
 read country
 
 if [ -n "$country" ]; then
-    sudo reflector --country "$country" --sort rate --save /etc/pacman.d/mirrorlist
+    sudo reflector --country "$country" --lastest 5 --sort rate --save /etc/pacman.d/mirrorlist
 else
     echo "Skipping mirrorlist configuration..."
 fi
@@ -24,14 +24,14 @@ git clone https://github.com/aqua28/dwm.git ~/documents/git/dwm
 git clone https://github.com/aqua28/st.git ~/documents/git/st
 git clone https://github.com/aqua28/dmenu.git ~/documents/git/dmenu
 git clone https://git.suckless.org/slock ~/documents/git/slock
-git clone https://github.com/aqua28/slstatus.git  ~/documents/git/slstatus
+#git clone https://github.com/aqua28/slstatus.git  ~/documents/git/slstatus
 git clone https://github.com/aqua28/nsxiv.git ~/documents/git/nsxiv
 
 sudo make -C ~/documents/git/dwm install
 sudo make -C ~/documents/git/st install
 sudo make -C ~/documents/git/dmenu install
 sudo make -C ~/documents/git/slock install
-sudo make -C ~/documents/git/slstatus install
+#sudo make -C ~/documents/git/slstatus install
 sudo make -C ~/documents/git/nsxiv install
 
 git clone https://github.com/aqua28/dotfiles.git ~/dotfiles
