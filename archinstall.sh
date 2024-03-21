@@ -2,7 +2,7 @@
 
 sudo pacman -Syu --noconfirm
 
-#sudo pacman -S --noconfirm reflector rsync
+sudo pacman -S --noconfirm reflector rsync
 
 echo "!!!!! SKIP ON ARTIX !!!!!
 Enter your desired country for the mirrorlist (leave empty to skip):"
