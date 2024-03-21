@@ -15,7 +15,7 @@ else
 fi
 
 cd ~/script
-
+mv ~/script/wg.jpg ~
 awk '!/^#/ {print $1}' ~/script/packagelist | sudo pacman -S --noconfirm --needed -
 
 mkdir -p ~/documents/git
@@ -98,3 +98,5 @@ else
     echo "This is not Artix Linux."
     (crontab -l 2>/dev/null; echo "0 14 * * * /.local/bin/daily_update") | crontab -    
 fi
+
+setbg ~/wg.jpg
