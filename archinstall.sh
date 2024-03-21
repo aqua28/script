@@ -29,14 +29,14 @@ git clone https://github.com/aqua28/slock ~/documents/git/slock
 git clone https://github.com/aqua28/nsxiv.git ~/documents/git/nsxiv
 
 echo "Enter the username you want to add:"
-read userslock
+read slockname
 
 echo "Enter the group name you want to add:"
-read groupslock
+read slockgroup
 
-sed -i "s/{{USERNAME}}/$userslock/g" ~/documents/git/slock/config.def.h
-sed -i "s/{{GROUPNAME}}/$groupslock/g" ~/documents/git/slock/config.def.h
-
+# Replace the user and group values in config.h
+sed -i "s/const char \*user.*$/const char \*user = \"$slockname\";/" ~/documents/git/slock/config.def.h
+sed -i "s/const char \*group.*$/const char \*group = \"$slockgroup\";/" ~/documents/git/slock/config.def.h
 
 sudo make -C ~/documents/git/dwm install
 sudo make -C ~/documents/git/st install
