@@ -18,7 +18,9 @@ cd ~/script
 
 awk '!/^#/ {print $1}' ~/script/packagelist | sudo pacman -S --noconfirm --needed -
 
-mkdir -p ~/documents/git 
+mkdir -p ~/documents/git
+mkdir ~/documents/wallpapers
+mkdir ~/documents/keepassxc
 
 git clone https://github.com/aqua28/dwm.git ~/documents/git/dwm
 git clone https://github.com/aqua28/st.git ~/documents/git/st

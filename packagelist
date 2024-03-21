@@ -10,6 +10,7 @@ imlib2		#	library for images
 libexif		#	library for exif
 xclip		#	copy with terminal
 dunst		#	notification system
+cronie
 libnotify
 sxhkd		#	X daemon
 sshfs		#	server nas
