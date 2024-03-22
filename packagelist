@@ -24,8 +24,6 @@ rsync		#	rsync
 autorandr	#	tool for managing screens automatically
 xf86-video-intel
 libva-intel-driver
-gbvs
-thunar
 
 # audio
 pipewire	#	pipewire
@@ -62,7 +60,6 @@ zathura-pdf-mupdf
 unzip		#	zip files
 imagemagick	#	image swiss army knife
 newsboat	#	rss
-transmission-cli	#	torrent
 unrar
 
 # theme
