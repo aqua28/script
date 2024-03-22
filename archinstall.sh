@@ -23,6 +23,8 @@ mkdir ~/documents/wallpapers
 mkdir ~/documents/keepassxc
 
 git clone https://github.com/aqua28/dwm.git ~/documents/git/dwm
+git clone https://github.com/aqua28/script.git ~/documents/git/script
+git clone https://github.com/aqua28/dotfiles.git ~/documents/git/dotfiles
 git clone https://github.com/aqua28/st.git ~/documents/git/st
 git clone https://github.com/aqua28/dmenu.git ~/documents/git/dmenu
 git clone https://github.com/aqua28/slock ~/documents/git/slock
